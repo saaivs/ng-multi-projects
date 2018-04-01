@@ -49,6 +49,51 @@
         "dev": "../_common/environments/environment.ts",
         "prod": "../_common/environments/environment.prod.ts"
       }
+    },
+    {
+      "name": "joke-lib",
+      "root": "src/joke-lib",
+      "outDir": "dist/joke-lib",
+      "assets": [],
+      "index": "../_common/index.html",
+      "main": "public_api.ts",
+      "polyfills": "../_common/polyfills.ts",
+      "test": "../test.ts",
+      "tsconfig": "../tsconfig.app.json",
+      "testTsconfig": "../tsconfig.spec.json",
+      "prefix": "app",
+      "styles": [],
+      "scripts": [],
+      "environmentSource": "../_common/environments/environment.ts",
+      "environments": {
+        "dev": "../_common/environments/environment.ts",
+        "prod": "../_common/environments/environment.prod.ts"
+      }
+    },
+    {
+      "name": "joke-app",
+      "root": "src/joke-app",
+      "outDir": "dist/joke-app",
+      "assets": [
+        "assets",
+        "favicon.ico"
+      ],
+      "index": "index.html",
+      "main": "main.ts",
+      "polyfills": "../_common/polyfills.ts",
+      "test": "../test.ts",
+      "tsconfig": "../tsconfig.app.json",
+      "testTsconfig": "../tsconfig.spec.json",
+      "prefix": "app",
+      "styles": [
+        "styles/styles.scss"
+      ],
+      "scripts": [],
+      "environmentSource": "environments/environment.ts",
+      "environments": {
+        "dev": "environments/environment.ts",
+        "prod": "environments/environment.prod.ts"
+      }
     }
   ],
   "e2e": {

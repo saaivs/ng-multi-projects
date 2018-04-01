@@ -22,11 +22,20 @@
       "@hero/*": [
         "hero-app/app/*"
       ],
+      "@joke/*": [
+        "joke-app/app/*"
+      ],
       "@common-lib": [
         "common-lib/public_api.ts"
       ],
       "@common-lib/*": [
         "common-lib/app/*"
+      ],
+      "@joke-lib": [
+        "joke-lib/public_api.ts"
+      ],
+      "@joke-lib/*": [
+        "joke-lib/app/*"
       ]
     }
   }

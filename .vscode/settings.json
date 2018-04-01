@@ -1,0 +1,33 @@
+{
+  "files.exclude": {
+    "dist": false,
+    "dist-server": false,
+    "tmp": false,
+    "out-tsc": false,
+    "node_modules": false,
+    ".idea": false,
+    ".project": false,
+    ".classpath": false,
+    ".c9/": false,
+    "*.launch": false,
+    ".settings/": false,
+    "*.sublime-workspace": false,
+    ".vscode/*": false,
+    "!.vscode/settings.json": false,
+    "!.vscode/tasks.json": false,
+    "!.vscode/launch.json": false,
+    "!.vscode/extensions.json": false,
+    ".sass-cache": false,
+    "connect.lock": false,
+    "coverage": false,
+    "libpeerconnection.log": false,
+    "npm-debug.log": false,
+    "yarn-error.log": false,
+    "testem.log": false,
+    "typings": false,
+    "e2e/*.js": false,
+    "e2e/*.map": false,
+    ".DS_Store": false,
+    "Thumbs.db": false
+  }
+}
