@@ -36,6 +36,9 @@
       ],
       "@joke-lib/*": [
         "joke-lib/app/*"
+      ],
+      "lib1": [
+        "dist/lib1"
       ]
     }
   }
