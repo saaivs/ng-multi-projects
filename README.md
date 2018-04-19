@@ -1,4 +1,4 @@
 # ng-multi-projects
-Angular multi projects workspace example for angular-
+Angular multi projects workspace example for angular 6
 
-ng update @angular/cli --migrate-only --from=1.7.4
+

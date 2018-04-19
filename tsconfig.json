@@ -17,28 +17,34 @@
       "es2017",
       "dom"
     ],
-    "baseUrl": "src",
+    "baseUrl": "./",
     "paths": {
       "@hero/*": [
-        "hero-app/app/*"
-      ],
-      "@joke/*": [
-        "joke-app/app/*"
+        "projects/hero-app/src/app/*"
       ],
       "@common-lib": [
-        "common-lib/public_api.ts"
+        "projects/common-lib/src/public_api.ts"
       ],
       "@common-lib/*": [
-        "common-lib/app/*"
+        "projects/common-lib/src/*"
+      ],
+      "@joke/*": [
+        "projects/joke-app/arc/app/*"
       ],
       "@joke-lib": [
-        "joke-lib/public_api.ts"
+        "projects/joke-lib/src/public_api.ts"
       ],
       "@joke-lib/*": [
-        "joke-lib/app/*"
+        "projects/joke-lib/src/app/*"
       ],
       "lib1": [
         "dist/lib1"
+      ],
+      "joke-lib": [
+        "dist/joke-lib"
+      ],
+      "common-lib": [
+        "dist/common-lib"
       ]
     }
   }
