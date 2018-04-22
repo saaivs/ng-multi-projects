@@ -538,33 +538,142 @@
           }
         }
       }
+    },
+    "mat-app": {
+      "root": "projects/mat-app/",
+      "projectType": "application",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/mat-app",
+            "index": "projects/mat-app/src/index.html",
+            "main": "projects/mat-app/src/main.ts",
+            "polyfills": "projects/mat-app/src/polyfills.ts",
+            "tsConfig": "projects/mat-app/tsconfig.app.json",
+            "assets": [
+              {
+                "glob": "favicon.ico",
+                "input": "projects/mat-app/src",
+                "output": "/"
+              },
+              {
+                "glob": "**/*",
+                "input": "projects/mat-app/src/assets",
+                "output": "/assets"
+              }
+            ],
+            "styles": [
+              "projects/mat-app/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/mat-app/src/environments/environment.ts",
+                  "with": "projects/mat-app/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "mat-app:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "mat-app:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "mat-app:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/mat-app/src/test.ts",
+            "polyfills": "projects/mat-app/src/polyfills.ts",
+            "tsConfig": "projects/mat-app/tsconfig.spec.json",
+            "karmaConfig": "projects/mat-app/karma.conf.js",
+            "styles": [
+              {
+                "input": "projects/mat-app/styles.scss"
+              }
+            ],
+            "scripts": [],
+            "assets": [
+              {
+                "glob": "favicon.ico",
+                "input": "projects/mat-app/src/",
+                "output": "/"
+              },
+              {
+                "glob": "**/*",
+                "input": "projects/mat-app/src/assets",
+                "output": "/assets"
+              }
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/mat-app/tsconfig.app.json",
+              "projects/mat-app/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "mat-app-e2e": {
+      "root": "projects/mat-app-e2e/",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/mat-app-e2e/protractor.conf.js",
+            "devServerTarget": "mat-app:serve"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "projects/mat-app-e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "cli": {},
   "schematics": {
-    "@schematics/angular:class": {
-      "spec": false
-    },
     "@schematics/angular:component": {
-      "spec": false,
-      "prefix": "app",
       "styleext": "scss"
-    },
-    "@schematics/angular:directive": {
-      "spec": false,
-      "prefix": "app"
-    },
-    "@schematics/angular:guard": {
-      "spec": false
-    },
-    "@schematics/angular:module": {
-      "spec": false
-    },
-    "@schematics/angular:pipe": {
-      "spec": false
-    },
-    "@schematics/angular:service": {
-      "spec": false
     }
   }
 }
