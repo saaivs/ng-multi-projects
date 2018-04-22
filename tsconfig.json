@@ -45,6 +45,9 @@
       ],
       "common-lib": [
         "dist/common-lib"
+      ],
+      "mat-lib": [
+        "dist/mat-lib"
       ]
     }
   }
