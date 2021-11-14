@@ -1,6 +1,6 @@
 {
   "name": "my-workspace",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -8,7 +8,8 @@
     "build:all": "ng build lib1 && ng build lib2 && ng build lib3 && ng build app1 && ng build app2",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "ng:bundle": "rm angular.json; ngx-ws -v"
+    "ng:generate": "rm angular.json; ngx-ws -v",
+    "rebuild": "npm run ng:generate && npm run build:all"
   },
   "private": true,
   "dependencies": {

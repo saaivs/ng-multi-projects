@@ -6,10 +6,12 @@ vars:
   e2e: '{{root}}/e2e'
   styleExt: scss
   prefix: app
+  
 resources: 
   - "material-style"
   - "fontawesome-free"
   - "document-register-element"
+
 project:
   projectType: application
   schematics:
