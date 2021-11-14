@@ -1,0 +1,82 @@
+vars:
+  root: 'projects/{{name}}'
+  src: '{{root}}/src'
+  environments: '{{src}}/environments'
+  env: '{{environments}}/environment'
+  e2e: '{{root}}/e2e'
+  styleExt: scss
+  prefix: app
+resources: []
+project:
+  projectType: application
+  schematics:
+    '@schematics/angular:component':
+      style: '{{styleExt}}'
+    '@schematics/angular:application':
+      strict: true
+  root: '{{root}}'
+  sourceRoot: '{{src}}'
+  prefix: '{{prefix}}'
+  architect:
+    build:
+      builder: '@angular-devkit/build-angular:browser'
+      options:
+        outputPath: 'dist/{{name}}'
+        index: '{{src}}/index.html'
+        main: '{{src}}/main.ts'
+        polyfills: '{{src}}/polyfills.ts'
+        tsConfig: '{{root}}/tsconfig.app.json'
+        inlineStyleLanguage: '{{styleExt}}'
+        assets:
+          - '{{src}}/favicon.ico'
+          - '{{src}}/assets'
+        styles:
+          - '{{src}}/styles.{{styleExt}}'
+        scripts: []
+      configurations:
+        production:
+          budgets:
+            - type: initial
+              maximumWarning: 500kb
+              maximumError: 1mb
+            - type: anyComponentStyle
+              maximumWarning: 2kb
+              maximumError: 4kb
+          fileReplacements:
+            - replace: '{{env}}.ts'
+              with: '{{env}}.prod.ts'
+          outputHashing: all
+        development:
+          buildOptimizer: false
+          optimization: false
+          vendorChunk: true
+          extractLicenses: false
+          sourceMap: true
+          namedChunks: true
+      defaultConfiguration: production
+    serve:
+      builder: '@angular-devkit/build-angular:dev-server'
+      configurations:
+        production:
+          browserTarget: '{{name}}:build:production'
+        development:
+          browserTarget: '{{name}}:build:development'
+      defaultConfiguration: development
+    extract-i18n:
+      builder: '@angular-devkit/build-angular:extract-i18n'
+      options:
+        browserTarget: '{{name}}:build'
+    test:
+      builder: '@angular-devkit/build-angular:karma'
+      options:
+        main: '{{src}}/test.ts'
+        polyfills: '{{src}}/polyfills.ts'
+        tsConfig: '{{root}}/tsconfig.spec.json'
+        karmaConfig: '{{root}}/karma.conf.js'
+        inlineStyleLanguage: '{{styleExt}}'
+        assets:
+          - '{{src}}/favicon.ico'
+          - '{{src}}/assets'
+        styles:
+          - '{{src}}/styles.{{styleExt}}'
+        scripts: []

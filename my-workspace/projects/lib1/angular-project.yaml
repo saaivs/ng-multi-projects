@@ -1,0 +1,5 @@
+vars:
+  root: 'projects/{{name}}'
+  src: '{{root}}/src'
+project:
+  $ref: '{{wsPath}}#/definitions/lib/project'

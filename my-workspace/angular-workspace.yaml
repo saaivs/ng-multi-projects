@@ -1,0 +1,59 @@
+vars:
+  projects: "projects"
+  defaultProject: app1
+
+resources:
+  material-style:
+    depends: 
+      - "material-icons"
+      - "roboto-font"
+  material-icons:
+    options:
+      styles: 
+        - "node_modules/material-design-icons-iconfont/dist/material-design-icons.css"
+  roboto-font:
+    options:
+      styles: 
+        - "node_modules/roboto-fontface/css/roboto/roboto-fontface.css"
+  document-register-element:
+    options:
+      assets: []
+      styles: []
+      scripts:
+        - "node_modules/document-register-element/build/document-register-element.js"
+  fontawesome-free:
+    options:
+      styles:
+        - "node_modules/@fortawesome/fontawesome-free/css/all.min.css"    
+
+definitions:
+  lib:    
+    project:
+      projectType: library
+      root: '{{root}}'
+      sourceRoot: '{{src}}'
+      prefix: lib
+      architect:
+        build:
+          builder: '@angular-devkit/build-angular:ng-packagr'
+          options:
+            project: '{{root}}/ng-package.json'
+          configurations:
+            production:
+              tsConfig: '{{root}}/tsconfig.lib.prod.json'
+            development:
+              tsConfig: '{{root}}/tsconfig.lib.json'
+          defaultConfiguration: production
+        test:
+          builder: '@angular-devkit/build-angular:karma'
+          options:
+            main: '{{root}}/src/test.ts'
+            tsConfig: '{{root}}/tsconfig.spec.json'
+            karmaConfig: '{{root}}/karma.conf.js'
+
+angular:
+  $schema: ./node_modules/@angular/cli/lib/config/schema.json
+  version: 1
+  newProjectRoot: "{{projects}}"
+  projects:
+  defaultProject: "{{defaultProject}}"

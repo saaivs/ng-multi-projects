@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { Lib3Module } from 'lib3';
-import { Lib1Module } from 'projects/lib1/src/public-api';
+import { Lib1Module } from 'lib1';
 
 import { AppComponent } from './app.component';
 

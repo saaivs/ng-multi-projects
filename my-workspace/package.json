@@ -5,8 +5,10 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:all": "ng build lib1 && ng build lib2 && ng build lib3 && ng build app1 && ng build app2",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "ng:bundle": "rm angular.json; ngx-ws -v"
   },
   "private": true,
   "dependencies": {
@@ -20,7 +22,12 @@
     "@angular/router": "~13.0.0",
     "rxjs": "~7.4.0",
     "tslib": "^2.3.0",
-    "zone.js": "~0.11.4"
+    "zone.js": "~0.11.4",
+    "@angular/elements": "~13.0.0",
+    "document-register-element": "1.14.6",
+    "material-design-icons-iconfont": "6.1.1",
+    "roboto-fontface": "0.10.0",
+    "@fortawesome/fontawesome-free": "5.15.4"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~13.0.2",
@@ -35,6 +42,7 @@
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
     "ng-packagr": "^13.0.0",
-    "typescript": "~4.4.3"
+    "typescript": "~4.4.3",
+    "ngx-ws": "1.0.2"
   }
 }
