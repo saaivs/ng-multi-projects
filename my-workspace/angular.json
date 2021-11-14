@@ -32,9 +32,14 @@
               "projects/app1/src/assets"
             ],
             "styles": [
+              "node_modules/material-design-icons-iconfont/dist/material-design-icons.css",
+              "node_modules/roboto-fontface/css/roboto/roboto-fontface.css",
+              "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
               "projects/app1/src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/document-register-element/build/document-register-element.js"
+            ]
           },
           "configurations": {
             "production": {
