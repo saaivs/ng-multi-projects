@@ -1,6 +1,6 @@
 # Angular multi-projects workspace example
 
-Angular [multi projects workspace](https://angular.io/guide/file-structure#setting-up-for-a-multi-project-workspace) example for Angular 13 with [ngx-ws](https://github.com/art-ws/ngx-ws) support.
+Angular 13 [multi projects workspace](https://angular.io/guide/file-structure#setting-up-for-a-multi-project-workspace) example with [ngx-ws](https://github.com/art-ws/ngx-ws) support.
 
 ## Getting started
 
